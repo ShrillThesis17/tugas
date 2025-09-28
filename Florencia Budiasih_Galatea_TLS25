@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+// Menentukan warna lampu lalu lintas
+string cekLampu(int waktuSekarang) {
+    int posisi = (waktuSekarang - 45) % 103;
+
+    if (posisi <= 3) {
+        return "Kuning";
+    } else if (posisi <= 83) {
+        return "Merah";
+    } else {
+        return "Hijau";
+    }
+}
+
+int main() {
+    int detikUji[] = {80, 135, 150, 212};
+    int jumlah = sizeof(detikUji) / sizeof(detikUji[0]);
+
+    cout << "=== Program Simulasi Lampu Lalu Lintas ===" << endl;
+
+    for (int i = 0; i < jumlah; i++) {
+        string hasilLampu = cekLampu(detikUji[i]);
+        cout << "Detik " << detikUji[i] 
+             << " -> Lampu sekarang: " << hasilLampu << endl;
+    }
+
+    return 0;
+}
