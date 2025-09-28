@@ -1,2 +1,0 @@
-# tugas
-pemograman 2
